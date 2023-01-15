@@ -491,7 +491,7 @@ void Creature::updateWalkAnimation()
     if (m_outfit.getCategory() != ThingCategoryCreature)
         return;
 
-    int footAnimPhases = m_outfit.hasMount() ? m_mountType->getAnimationPhases() : getAnimationPhases();
+    int footAnimPhases = m_outfit.hasMount() ? m_mountType->getAnimationPhases() : getAnimationPhases() -1;
     if (!g_game.getFeature(Otc::GameItemAnimationPhase) && footAnimPhases > 2) {
         --footAnimPhases;
     }
